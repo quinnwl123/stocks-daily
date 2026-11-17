@@ -90,18 +90,33 @@
     letter-spacing: -0.5px;
   }
   .logo-icon {
-    width: 32px;
-    height: 32px;
-    background: var(--gold);
-    border-radius: 6px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    font-weight: 900;
-    color: var(--black);
   }
   .logo span { color: var(--gold); }
+
+  /* -- ABOUT -- */
+  .about-section { background: var(--dark); border-top: 1px solid var(--border); padding: 72px 0; }
+  .about-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .about-heading { font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 900; line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 20px; color: var(--text); }
+  .about-lead { font-size: 17px; font-weight: 500; color: var(--text); line-height: 1.65; margin-bottom: 16px; }
+  .about-body { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 14px; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+  .about-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-top: 32px; }
+  .about-stat { background: var(--card); padding: 20px 16px; text-align: center; }
+  .about-stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+  .about-stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .about-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; transition: border-color 0.2s; }
+  .about-card:hover { border-color: var(--gold); }
+  .about-card-icon { font-size: 28px; margin-bottom: 12px; }
+  .about-card-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+  .about-card-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 40px; } .about-cards { grid-template-columns: 1fr 1fr; } .about-stats { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .about-cards { grid-template-columns: 1fr; } }
   .nav-links {
     display: flex;
     align-items: center;
@@ -792,17 +807,16 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo">
-      <div class="logo-icon">SI</div>
-      Stocks<span>Insider</span>
+      <div class="logo-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="#F0E030"/><path d="M8 24 L14 16 L19 20 L25 11 L28 14" stroke="#080A12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="11" r="2.5" fill="#080A12"/></svg></div>
+      Stocks<span>Daily</span>
     </a>
     <ul class="nav-links">
       <li><a href="#" class="active">Home</a></li>
       <li><a href="#">ASX News</a></li>
       <li><a href="#">Resources</a></li>
-      <li><a href="#">Insider Moves</a></li>
-      <li><a href="#">Tech & Innovation</a></li>
-      <li><a href="#">The Daily Brief</a></li>
-      <li><a href="#" class="nav-cta">Subscribe Free â</a></li>
+      <li><a href="#">Research</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
     <div class="hamburger" onclick="this.classList.toggle('open')">
       <span></span><span></span><span></span>
@@ -1314,6 +1328,33 @@
   </div>
 </section>
 
+<!-- ABOUT US -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div class="section-label" style="margin-bottom:32px;">About Us</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="about-heading">Australia’s Sharpest Daily Market Brief</h2>
+        <p class="about-lead">Stocks Daily is an independent Australian financial news service built for investors who want signal, not noise — from small-cap movers to insider activity, resources plays, and the daily close delivered straight to your inbox.</p>
+        <p class="about-body">We track the ASX every session and distil what matters: the winners, the losers, the stocks catching institutional attention, and the macro forces shaping the week ahead. Our team has backgrounds across equities research, financial journalism, and market analysis — so you get coverage that’s clear, honest, and built for real investors.</p>
+        <p class="about-body">Stocks Daily is proudly powered by <span style="color:var(--gold);font-weight:700;">Republic IR</span> — a capital markets communications firm working with listed and emerging companies across Australia. Republic IR’s reach gives our readers early access to company updates, investor briefings, and the stories the broader market hasn’t picked up yet.</p>
+        <div class="about-stats">
+          <div class="about-stat"><div class="about-stat-num">5,000+</div><div class="about-stat-label">Subscribers</div></div>
+          <div class="about-stat"><div class="about-stat-num">Daily</div><div class="about-stat-label">Market Coverage</div></div>
+          <div class="about-stat"><div class="about-stat-num">ASX</div><div class="about-stat-label">Focused</div></div>
+          <div class="about-stat"><div class="about-stat-num">Free</div><div class="about-stat-label">Newsletter</div></div>
+        </div>
+      </div>
+      <div class="about-cards">
+        <div class="about-card"><div class="about-card-icon">📊</div><div class="about-card-title">Market Intelligence</div><div class="about-card-desc">Daily coverage of ASX indices, sector moves, commodity prices, and currency rates — everything you need before the bell.</div></div>
+        <div class="about-card"><div class="about-card-icon">🔍</div><div class="about-card-title">Insider Tracking</div><div class="about-card-desc">We follow director purchases and on-market buybacks — because when management buys, it’s worth paying attention.</div></div>
+        <div class="about-card"><div class="about-card-icon">⚡</div><div class="about-card-title">Small Cap Focus</div><div class="about-card-desc">Beyond the big banks and miners — we surface emerging opportunities in resources, tech, and growth sectors early.</div></div>
+        <div class="about-card"><div class="about-card-icon">📬</div><div class="about-card-title">Free Daily Brief</div><div class="about-card-desc">Subscribe once and get the market brief in your inbox every trading day. No paywalls, no fluff.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -1323,8 +1364,8 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo" style="margin-bottom:12px;">
-          <div class="logo-icon">SI</div>
-          Stocks<span>Insider</span>
+          <div class="logo-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="36" height="36" rx="8" fill="#F0E030"/><path d="M8 24 L14 16 L19 20 L25 11 L28 14" stroke="#080A12" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="28" cy="11" r="2.5" fill="#080A12"/></svg></div>
+          Stocks<span>Daily</span>
         </div>
         <p>Australia's sharpest source for ASX intelligence â from small-cap stories to insider moves, resources coverage, and the market's daily brief delivered free to your inbox.</p>
         <div class="social-links">
