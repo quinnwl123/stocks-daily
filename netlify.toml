@@ -1,4 +1,12 @@
+[build]
+  publish = "."
+
 [[redirects]]
-  from = "/"
-  to = "/stocksdaily.html"
-  status = 200
+  from = "/stocksdaily.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/stocksdaily"
+  to = "/"
+  status = 301
