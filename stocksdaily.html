@@ -578,7 +578,7 @@
   }
   .market-data-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
@@ -630,8 +630,8 @@
   .mdata-table .neutral { color: var(--muted); }
   .mdata-table .gold-val { color: var(--gold); font-weight: 700; }
   .mdata-table .rank { color: var(--muted); font-size: 10px; width: 16px; }
-  @media (max-width: 1024px) { .market-data-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 600px) { .market-data-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 1024px) { .market-data-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .market-data-grid { grid-template-columns: 1fr; } }
 
   /* ââ INSIDER MOVES ââ */
   .insider-section {
@@ -1252,6 +1252,10 @@
             <tr><td class="rank">4</td><td>DMP</td><td class="up">â² 4.19%</td></tr>
             <tr><td class="rank">5</td><td>VCX</td><td class="up">â² 2.88%</td></tr>
             <tr><td class="rank">6</td><td>WTC</td><td class="up">â² 2.84%</td></tr>
+            <tr><td class="rank">7</td><td>NCM</td><td class="up">▲ 2.17%</td></tr>
+            <tr><td class="rank">8</td><td>AGL</td><td class="up">▲ 2.10%</td></tr>
+            <tr><td class="rank">9</td><td>SQ2</td><td class="up">▲ 2.05%</td></tr>
+            <tr><td class="rank">10</td><td>EDV</td><td class="up">▲ 1.97%</td></tr>
           </tbody>
         </table>
       </div>
@@ -1268,10 +1272,44 @@
             <tr><td class="rank">4</td><td>SLX</td><td class="dn">â¼ 4.87%</td></tr>
             <tr><td class="rank">5</td><td>CSC</td><td class="dn">â¼ 4.83%</td></tr>
             <tr><td class="rank">6</td><td>4DX</td><td class="dn">â¼ 4.78%</td></tr>
+            <tr><td class="rank">7</td><td>IPX</td><td class="dn">▼ 4.69%</td></tr>
+            <tr><td class="rank">8</td><td>SRG</td><td class="dn">▼ 3.90%</td></tr>
+            <tr><td class="rank">9</td><td>DEY</td><td class="dn">▼ 3.87%</td></tr>
+            <tr><td class="rank">10</td><td>MIN</td><td class="dn">▼ 3.63%</td></tr>
           </tbody>
         </table>
       </div>
 
+
+      <!-- MOST ACTIVE VALUE -->
+      <div class="mdata-block">
+        <div class="mdata-title">MOST ACTIVE <span class="mdata-sub">VALUE</span></div>
+        <table class="mdata-table">
+          <thead><tr><th>#</th><th>Code</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td class="rank">1</td><td>BHP</td><td style="color:var(--muted);">380m</td></tr>
+            <tr><td class="rank">2</td><td>CBA</td><td style="color:var(--muted);">238m</td></tr>
+            <tr><td class="rank">3</td><td>NAB</td><td style="color:var(--muted);">163m</td></tr>
+            <tr><td class="rank">4</td><td>WBC</td><td style="color:var(--muted);">156m</td></tr>
+            <tr><td class="rank">5</td><td>ANZ</td><td style="color:var(--muted);">145m</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- MOST ACTIVE VOLUME -->
+      <div class="mdata-block">
+        <div class="mdata-title">MOST ACTIVE <span class="mdata-sub">VOLUME</span></div>
+        <table class="mdata-table">
+          <thead><tr><th>#</th><th>Code</th><th>Vol</th></tr></thead>
+          <tbody>
+            <tr><td class="rank">1</td><td>LTR</td><td style="color:var(--muted);">36.60m</td></tr>
+            <tr><td class="rank">2</td><td>CWY</td><td style="color:var(--muted);">35.54m</td></tr>
+            <tr><td class="rank">3</td><td>PLS</td><td style="color:var(--muted);">24.19m</td></tr>
+            <tr><td class="rank">4</td><td>GMD</td><td style="color:var(--muted);">17.17m</td></tr>
+            <tr><td class="rank">5</td><td>S32</td><td style="color:var(--muted);">16.94m</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </section>
