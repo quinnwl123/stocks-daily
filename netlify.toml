@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/"
+  to = "/stocksdaily.html"
+  status = 200
