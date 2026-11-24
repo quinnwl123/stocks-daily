@@ -260,20 +260,27 @@ body{font-family:Inter,sans-serif;background:#F4F6FA}
 <div class="subscribe-band">
   <h2 class="sb-title">Get This In Your Inbox Every Day</h2>
   <p class="sb-sub">Free. Every trading day at 5:30pm. Unsubscribe any time.</p>
-  <style>.hs-form fieldset{max-width:100%!important}.hs-form .hs-form-field{margin-bottom:12px}.hs-form label{color:#fff!important;font-size:13px;font-weight:600;display:block;margin-bottom:5px}.hs-form .hs-input{width:100%!important;padding:14px 18px;border:none;border-radius:2px;font-size:15px;box-sizing:border-box;background:#fff;color:#111}.hs-form .hs-submit .actions{margin-top:14px}.hs-form .hs-button{background:#F5C518;color:#000;font-size:15px;font-weight:700;padding:14px 32px;border:none;border-radius:2px;cursor:pointer;width:100%}.hs-form .hs-button:hover{background:#d4aa0f}.hs-form .hs-error-msgs{color:#ff9999;font-size:13px;margin-top:4px;list-style:none;padding:0}.hs-form .submitted-message{color:#fff;font-size:16px;text-align:center}</style>
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-<script>hbspt.forms.create({region:"ap1",portalId:"443784781",formId:"9d3de95d-3727-42e4-be3c-e12d377e20e7"});</script>
-<style>.hs-form input::placeholder,.hs-form textarea::placeholder{color:rgba(255,255,255,0.45)!important}</style>
+  <style>#sd-fname::placeholder,#sd-email::placeholder{color:rgba(255,255,255,0.5)}</style>
+<form id="sd-subscribe">
+  <label for="sd-fname" style="color:#fff;font-size:13px;font-weight:600;display:block;margin-bottom:5px">First Name</label>
+  <input id="sd-fname" type="text" name="firstname" placeholder="Your first name" autocomplete="given-name" style="width:100%;padding:14px 18px;border:1px solid rgba(255,255,255,0.35);border-radius:2px;font-size:15px;box-sizing:border-box;background:rgba(255,255,255,0.12);color:#fff;margin-bottom:12px" required>
+  <label for="sd-email" style="color:#fff;font-size:13px;font-weight:600;display:block;margin-bottom:5px">Email *</label>
+  <input id="sd-email" type="email" name="email" placeholder="Your email address" autocomplete="email" style="width:100%;padding:14px 18px;border:1px solid rgba(255,255,255,0.35);border-radius:2px;font-size:15px;box-sizing:border-box;background:rgba(255,255,255,0.12);color:#fff;margin-bottom:14px" required>
+  <button type="submit" style="background:#F5C518;color:#000;font-size:15px;font-weight:700;padding:14px 32px;border:none;border-radius:2px;cursor:pointer;width:100%">Subscribe Free</button>
+  <p id="sd-msg" style="color:#fff;font-size:14px;text-align:center;margin-top:10px;display:none"></p>
+</form>
 <script>
-(function(){
-  function go(){
-    document.querySelectorAll('.hs-form label,.hs-form .hs-label,.hs-form .field.hs-form-field label').forEach(function(e){e.style.setProperty('color','#fff','important');e.style.setProperty('font-weight','600','important');e.style.setProperty('font-size','13px','important');});
-    document.querySelectorAll('.hs-form .hs-input,.hs-form input[type="text"],.hs-form input[type="email"]').forEach(function(e){e.style.setProperty('background','rgba(255,255,255,0.12)','important');e.style.setProperty('border','1px solid rgba(255,255,255,0.35)','important');e.style.setProperty('color','#fff','important');e.style.setProperty('outline','none','important');});
-  }
-  go();
-  [150,400,900,2000].forEach(function(d){setTimeout(go,d);});
-  new MutationObserver(go).observe(document.body,{childList:true,subtree:true});
-})();
+document.getElementById('sd-subscribe').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var btn=this.querySelector('button'),msg=document.getElementById('sd-msg');
+  btn.textContent='Submitting…';btn.disabled=true;
+  try{
+    var res=await fetch('https://api.hsforms.com/submissions/v3/integration/submit/443784781/9d3de95d-3727-42e4-be3c-e12d377e20e7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:[{name:'firstname',value:document.getElementById('sd-fname').value},{name:'email',value:document.getElementById('sd-email').value}],context:{pageUri:location.href,pageName:document.title}})});
+    if(res.ok){msg.textContent='Thanks! Check your inbox soon.';msg.style.display='block';e.target.reset();}
+    else throw new Error();
+  }catch(err){msg.textContent='Something went wrong. Please try again.';msg.style.display='block';}
+  btn.textContent='Subscribe Free';btn.disabled=false;
+});
 </script>
 </div>
 
