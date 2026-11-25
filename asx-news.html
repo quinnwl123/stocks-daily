@@ -1,3 +1,80 @@
+<!DOCTYPE h
+<script>(function(){var bgs=document.querySelectorAll('.card-bg');function px(){bgs.forEach(function(el){var r=el.closest('.card').getBoundingClientRect(),vh=window.innerHeight,off=(r.top+r.height/2-vh/2)/vh;el.style.transform='translateY('+(off*22)+'px)';});}window.addEventListener('scroll',px,{passive:true});px();})();</script>tml><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ASX News &amp; Market Snapshot &#8212; Stocks Daily</title>
+<meta name="description" content="Live ASX market data, TradingView charts, commodity prices and daily market intelligence for ASX investors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1D2D44;--navy2:#152235;--gold:#F5C518;--max:1280px}
+body{font-family:Inter,sans-serif;background:#f4f6fa;color:#1a1a2e}
+/* TICKER */
+.ticker-wrap{background:var(--navy2);overflow:hidden}
+/* NAV */
+.nav{background:var(--navy2);position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-icon{width:36px;height:36px;background:var(--gold);border-radius:4px;display:flex;align-items:center;justify-content:center}
+.nav-logo-icon svg{width:22px;height:22px}
+.nav-logo-text{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.nav-links{display:flex;list-style:none;gap:4px;align-items:center}
+.nav-links a{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;padding:6px 11px;border-bottom:2px solid transparent;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff;border-bottom-color:var(--gold)}
+.nav-cta{background:var(--gold)!important;color:#111!important;border-radius:4px;border-bottom:none!important;padding:7px 14px!important}
+/* HERO */
+.hero{position:relative;min-height:400px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;background-attachment:fixed}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,25,45,.88) 0%,rgba(29,45,68,.82) 60%,rgba(13,25,45,.75) 100%)}
+.hero-content{position:relative;z-index:2;padding:60px 24px 56px;max-width:720px}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(38px,6vw,68px);font-weight:700;color:#fff;line-height:1.05;letter-spacing:.02em;text-transform:uppercase;margin-bottom:14px}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.7);line-height:1.6;max-width:520px;margin:0 auto}
+/* SNAPSHOT SECTION */
+.snap-section{background:#fff;padding:52px 24px 56px}
+.snap-inner{max-width:980px;margin:0 auto}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.section-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:28px}
+/* Six key markets newspaper grid */
+.market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid #e8eaf0;margin-bottom:40px}
+.mc{padding:18px 20px;border-right:1px solid #e8eaf0;border-bottom:1px solid #e8eaf0}
+.mc:nth-child(3n){border-right:none}
+.mc:nth-child(4),.mc:nth-child(5),.mc:nth-child(6){border-bottom:none}
+.mc-label{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#8a8fa8;margin-bottom:6px}
+.mc-name{font-size:13px;font-weight:600;color:#444;margin-bottom:2px}
+.mc-hint{font-size:11px;color:#aaa}
+/* TV widget wrapper */
+.tv-widget-wrap{margin-bottom:40px}
+.tv-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+
+<!-- SUBSCRIBE -->
+<div class="subscribe-band" id="subscribe">
+  <h2 class="sb-title">Get The Daily Brief Free</h2>
+  <p class="sb-sub">Every weekday at 5:30 PM AEST. Free. Unsubscribe any time.</p>
+  <style>#sd-fname::placeholder,#sd-email::placeholder{color:rgba(255,255,255,0.5)}</style>
+<form id="sd-subscribe">
+  <label for="sd-fname" style="color:#fff;font-size:13px;font-weight:600;display:block;margin-bottom:5px">First Name</label>
+  <input id="sd-fname" type="text" name="firstname" placeholder="Your first name" autocomplete="given-name" style="width:100%;padding:14px 18px;border:1px solid rgba(255,255,255,0.35);border-radius:2px;font-size:15px;box-sizing:border-box;background:rgba(255,255,255,0.12);color:#fff;margin-bottom:12px" required>
+  <label for="sd-email" style="color:#fff;font-size:13px;font-weight:600;display:block;margin-bottom:5px">Email *</label>
+  <input id="sd-email" type="email" name="email" placeholder="Your email address" autocomplete="email" style="width:100%;padding:14px 18px;border:1px solid rgba(255,255,255,0.35);border-radius:2px;font-size:15px;box-sizing:border-box;background:rgba(255,255,255,0.12);color:#fff;margin-bottom:14px" required>
+  <button type="submit" style="background:#F5C518;color:#000;font-size:15px;font-weight:700;padding:14px 32px;border:none;border-radius:2px;cursor:pointer;width:100%">Subscribe Free</button>
+  <p id="sd-msg" style="color:#fff;font-size:14px;text-align:center;margin-top:10px;display:none"></p>
+</form>
+<script>
+document.getElementById('sd-subscribe').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var btn=this.querySelector('button'),msg=document.getElementById('sd-msg');
+  btn.textContent='Submitting…';btn.disabled=true;
+  try{
+    var res=await fetch('https://api.hsforms.com/submissions/v3/integration/submit/443784781/9d3de95d-3727-42e4-be3c-e12d377e20e7',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fields:[{name:'firstname',value:document.getElementById('sd-fname').value},{name:'email',value:document.getElementById('sd-email').value}],context:{pageUri:location.href,pageName:document.title}})});
+    if(res.ok){msg.textContent='Thanks! Check your inbox soon.';msg.style.display='block';e.target.reset();}
+    else throw new Error();
+  }catch(err){msg.textContent='Something went wrong. Please try again.';msg.style.display='block';}
+  btn.textContent='Subscribe Free';btn.disabled=false;
+});
+</script>
+</div>
+
 <!-- FOOTER -->
 <footer class="site-footer"><div class="sf-inner">
   <div class="sf-logo">Stocks<span> Daily</span></div>
